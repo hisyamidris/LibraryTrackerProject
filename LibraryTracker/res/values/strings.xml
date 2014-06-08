@@ -5,5 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string android:layout_height="wrap_content" android:id="@+id/string1" android:layout_width="wrap_content" name="welcome_text">Welcome to Library Tracker App</string>
+    <string android:layout_height="wrap_content" android:id="@+id/string1" android:layout_width="wrap_content" name="whereq">Check Book Location</string>
+    <string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="whoq">What Am I Currently Borrowing?</string>
+    <string android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/string1" name="adminmenu">Login as Admin</string>
 
 </resources>
