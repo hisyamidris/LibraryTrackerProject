@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <string name="myClickHandler">myClickHandler</string>
     <string name="app_name">LibraryTracker</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string android:layout_height="wrap_content" android:id="@+id/string1" android:layout_width="wrap_content" name="welcome_text">Welcome to Library Tracker App</string>
-    <string android:layout_height="wrap_content" android:id="@+id/string1" android:layout_width="wrap_content" name="whereq">Check Book Location</string>
-    <string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="whoq">What Am I Currently Borrowing?</string>
-    <string android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/string1" name="adminmenu">Login as Admin</string>
+    <string android:id="@+id/string1" name="welcome_text" android:layout_width="wrap_content" android:layout_height="wrap_content">Welcome to Library Tracker App</string>
+    <string android:id="@+id/string1" name="whereq" android:layout_width="wrap_content" android:layout_height="wrap_content">Check Book Location</string>
+    <string android:id="@+id/string1" name="whoq" android:layout_width="wrap_content" android:layout_height="wrap_content">What Am I Currently Borrowing?</string>
+    <string android:id="@+id/string1" name="adminmenu" android:layout_width="wrap_content" android:layout_height="wrap_content">Login as Admin</string>
+    <string name="title_activity_whoq">Who Query</string>
 
 </resources>

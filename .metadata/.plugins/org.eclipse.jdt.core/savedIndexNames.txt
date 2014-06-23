@@ -1,6 +1,3 @@
 INDEX VERSION 1.126+C:\Users\Akmal\Documents\GitHub\LibraryTrackerProject\.metadata\.plugins\org.eclipse.jdt.core
 1284074322.index
-2386581078.index
 4173276648.index
-829367061.index
-1952688072.index

@@ -26,6 +26,7 @@
             android:layout_below="@+id/textView1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="112dp"
+            android:onClick="onClick"
             android:text="@string/whoq" />
 
         <Button

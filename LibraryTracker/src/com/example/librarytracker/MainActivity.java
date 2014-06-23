@@ -3,12 +3,14 @@ package com.example.librarytracker;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
@@ -17,7 +19,11 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+ //       Button whoqB = (Button) findViewById(R.id.button1);
+ //       Button whereqB = (Button) findViewById(R.id.button2);
+ //       Button adminB = (Button) findViewById(R.id.button3);
+        
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -25,6 +31,14 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    public void onClick(View view) {
+        switch (view.getId()) {
+        case R.id.button1:
+        	Intent i = new Intent(getApplicationContext(), WhoqActivity.class);
+        	startActivity(i);
+          break;
+        }
+      }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
