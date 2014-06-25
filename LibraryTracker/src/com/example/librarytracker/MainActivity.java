@@ -1,7 +1,7 @@
 package com.example.librarytracker;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+//import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+//import android.os.Build;
 import android.widget.Button;
 import android.content.Intent;
 
@@ -27,6 +27,7 @@ public class MainActivity extends ActionBarActivity {
         }
         
         Button btnNextScreen = (Button) findViewById(R.id.button1);
+        Button btnNextScreen2 = (Button) findViewById(R.id.button2);
         
         btnNextScreen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -40,6 +41,22 @@ public class MainActivity extends ActionBarActivity {
                 //Log.e("n", inputName.getText()+"."+ inputEmail.getText());
  
                 startActivity(nextScreen);
+ 
+            }
+        });
+        
+        btnNextScreen2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                Intent nextScreen2 = new Intent(getApplicationContext(), WhereActivity.class);
+ 
+                //Sending data to another Activity
+                //nextScreen.putExtra("name", inputName.getText().toString());
+                //nextScreen.putExtra("email", inputEmail.getText().toString());
+ 
+                //Log.e("n", inputName.getText()+"."+ inputEmail.getText());
+ 
+                startActivity(nextScreen2);
  
             }
         });

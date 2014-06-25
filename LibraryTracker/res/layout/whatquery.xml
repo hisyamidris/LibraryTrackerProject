@@ -1,26 +1,10 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.librarytracker.MainActivity"
     tools:ignore="MergeRootFrame" >
-
-    	  <RelativeLayout
-    	      android:layout_width="match_parent"
-    	      android:layout_height="match_parent" >
-
-    	      <EditText
-    	          android:id="@+id/whatText"
-    	          android:layout_width="wrap_content"
-    	          android:layout_height="wrap_content"
-    	          android:layout_alignParentLeft="true"
-    	          android:layout_alignParentRight="true"
-    	          android:layout_alignParentTop="true"
-    	          android:ems="10" >
-
-    	          <requestFocus />
-    	      </EditText>
 
     	      <Button
     	          android:id="@+id/buttonNext"
@@ -29,17 +13,26 @@
     	          android:layout_alignParentLeft="true"
     	          android:layout_below="@+id/buttonNext"
     	          android:layout_marginTop="58dp"
-    	          android:text="Search" />
+    	          android:text="@string/whoq" />
 
     	      <TextView
-    	          android:id="@+id/viewText"
+    	          android:id="@+id/textView1"
     	          android:layout_width="wrap_content"
     	          android:layout_height="wrap_content"
-    	          android:layout_alignParentLeft="true"
     	          android:layout_below="@+id/buttonNext"
-    	          android:layout_marginTop="28dp"
-    	          android:text="TextView" />
+    	          android:layout_centerHorizontal="true"
+    	          android:layout_marginTop="40dp"
+    	          android:text="@string/blank" />
 
-    	  </RelativeLayout>
+    	      <EditText
+    	          android:id="@+id/whatText"
+    	          android:layout_width="wrap_content"
+    	          android:layout_height="wrap_content"
+    	          android:layout_alignParentTop="true"
+    	          android:layout_centerHorizontal="true"
+    	          android:ems="10"
+    	          android:inputType="textPersonName"
+    	          android:maxLength="50"
+    	          android:text="@string/blank" />
 
-</FrameLayout>
+</RelativeLayout>

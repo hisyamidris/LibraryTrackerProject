@@ -9,14 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class WhatActivity extends ActionBarActivity {
+public class WhereActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.whatquery);
+        setContentView(R.layout.wherequery);
         
-        final EditText inputSearch = (EditText) findViewById(R.id.whatText);
-        Button buttonNext = (Button) findViewById(R.id.buttonNext);
-        final TextView outputSearch = (TextView) findViewById(R.id.textView1);
+        final EditText inputSearch = (EditText) findViewById(R.id.inputWho);
+        Button buttonNext = (Button) findViewById(R.id.buttonWho);
+        final TextView outputSearch = (TextView) findViewById(R.id.confirmWho);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
           	 
