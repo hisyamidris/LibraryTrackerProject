@@ -16,6 +16,9 @@ import android.content.Intent;
 public class MainActivity extends ActionBarActivity {
 
     @Override
+    /**
+     * Upon start of the class, onCreate function sets the view and state of the program
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -33,12 +36,6 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 //Starting a new Intent
                 Intent nextScreen = new Intent(getApplicationContext(), WhatActivity.class);
- 
-                //Sending data to another Activity
-                //nextScreen.putExtra("name", inputName.getText().toString());
-                //nextScreen.putExtra("email", inputEmail.getText().toString());
- 
-                //Log.e("n", inputName.getText()+"."+ inputEmail.getText());
  
                 startActivity(nextScreen);
  
