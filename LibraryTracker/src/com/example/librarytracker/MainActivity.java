@@ -47,12 +47,6 @@ public class MainActivity extends ActionBarActivity {
                 //Starting a new Intent
                 Intent nextScreen2 = new Intent(getApplicationContext(), WhereActivity.class);
  
-                //Sending data to another Activity
-                //nextScreen.putExtra("name", inputName.getText().toString());
-                //nextScreen.putExtra("email", inputEmail.getText().toString());
- 
-                //Log.e("n", inputName.getText()+"."+ inputEmail.getText());
- 
                 startActivity(nextScreen2);
  
             }

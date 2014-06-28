@@ -31,12 +31,12 @@ public class WhatActivity extends ActionBarActivity {
         StrictMode.enableDefaults();
         final EditText inputSearch = (EditText) findViewById(R.id.whatText);
         Button buttonNext = (Button) findViewById(R.id.buttonNext);
-        final TextView outputSearch = (TextView) findViewById(R.id.textView1);
+        //final TextView outputSearch = (TextView) findViewById(R.id.textView1);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
           	 
             public void onClick(View arg0) {
-            	outputSearch.setText(inputSearch.getText());
+        //     	outputSearch.setText(inputSearch.getText());
                 getData(inputSearch.getText().toString());               
             }
         });
@@ -60,7 +60,7 @@ public class WhatActivity extends ActionBarActivity {
 	    }
 	    catch(Exception e){
 	            Log.e("log_tag", "Error in http connection "+e.toString());
-	            resultView.setText("Couldnt connect to database");
+	            resultView.setText("Couldn't connect to database");
 	    }
 	    //convert response to string
 	    try{
@@ -87,7 +87,7 @@ public class WhatActivity extends ActionBarActivity {
 			   JSONObject json = jArray.getJSONObject(i);
 			   s = s + 
 					   "Title : "+json.getString("title")+"\n"+
-					   "Book Status : "+json.getString("whoq")+"\n"+
+					   "Book Status : "+json.getString("whoq")+"\n"+ //Don't need Book Status from WhatQuery
 					   "Location : "+json.getString("where")+"\n\n";
 		   }
 		   
