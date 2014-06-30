@@ -25,6 +25,9 @@ import android.widget.TextView;
 
 public class WhatActivity extends ActionBarActivity {
     
+	/**
+     * Upon start of the class, onCreate function sets the view and state of the program
+     */
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.whatquery);
@@ -34,9 +37,10 @@ public class WhatActivity extends ActionBarActivity {
   //      final TextView outputSearch = (TextView) findViewById(R.id.textView1);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
-          	 
+          	
+        	/** After clicking on the button, the SQL query is sent*/
             public void onClick(View arg0) {
-   //         	outputSearch.setText(inputSearch.getText());
+        //     	outputSearch.setText(inputSearch.getText());
                 getData(inputSearch.getText().toString());               
             }
         });
@@ -47,6 +51,10 @@ public class WhatActivity extends ActionBarActivity {
                     .commit();
         }
 	}
+		/**
+		 * This methods gets the data from the database using SQL queries
+		 * @param input
+		 */
 	   public void getData(String input){
 	    	String result = "";
 	    	InputStream isr = null;
@@ -58,11 +66,14 @@ public class WhatActivity extends ActionBarActivity {
 	            HttpEntity entity = response.getEntity();
 	            isr = entity.getContent();
 	    }
+			/** In the event of an error connecting to the database
+			 *  the error message is displayed below
+			 */
 	    catch(Exception e){
 	            Log.e("log_tag", "Error in http connection "+e.toString());
-	            resultView.setText("Couldnt connect to database");
+	            resultView.setText("Couldn't connect to database");
 	    }
-	    //convert response to string
+	    /**convert response to string */
 	    try{
 	            BufferedReader reader = new BufferedReader(new InputStreamReader(isr,"iso-8859-1"),8);
 	            StringBuilder sb = new StringBuilder();
@@ -74,11 +85,12 @@ public class WhatActivity extends ActionBarActivity {
 	     
 	            result=sb.toString();
 	    }
+	    /**Error message in event that conversion fails*/
 	    catch(Exception e){
 	            Log.e("log_tag", "Error  converting result "+e.toString());
 	    }
 	     
-	    //parse json data
+	   /** parse the JSON data*/
 	   try {
 		   String s = "";
 		   JSONArray jArray = new JSONArray(result);
