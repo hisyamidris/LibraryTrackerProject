@@ -36,4 +36,13 @@
         android:layout_marginTop="16dp"
         android:text="@string/whereq" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/confirmWho"
+        android:layout_alignBottom="@+id/confirmWho"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
 </RelativeLayout>

@@ -31,12 +31,12 @@ public class WhatActivity extends ActionBarActivity {
         StrictMode.enableDefaults();
         final EditText inputSearch = (EditText) findViewById(R.id.whatText);
         Button buttonNext = (Button) findViewById(R.id.buttonNext);
-        final TextView outputSearch = (TextView) findViewById(R.id.textView1);
+  //      final TextView outputSearch = (TextView) findViewById(R.id.textView1);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
           	 
             public void onClick(View arg0) {
-            	outputSearch.setText(inputSearch.getText());
+   //         	outputSearch.setText(inputSearch.getText());
                 getData(inputSearch.getText().toString());               
             }
         });
@@ -86,9 +86,7 @@ public class WhatActivity extends ActionBarActivity {
 		   for(int i=0; i<jArray.length();i++){
 			   JSONObject json = jArray.getJSONObject(i);
 			   s = s + 
-					   "Title : "+json.getString("title")+"\n"+
-					   "Book Status : "+json.getString("whoq")+"\n"+
-					   "Location : "+json.getString("where")+"\n\n";
+					   i+1 + ". "+json.getString("title")+"\n";
 		   }
 		   
 		   resultView.setText(s);
