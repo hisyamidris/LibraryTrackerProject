@@ -29,6 +29,9 @@ public class MainActivity extends ActionBarActivity {
                     .commit();
         }
         
+        /** Two buttons on screen established here 
+         *  and their respective click functionalities
+         */
         Button btnNextScreen = (Button) findViewById(R.id.button1);
         Button btnNextScreen2 = (Button) findViewById(R.id.button2);
         
@@ -55,6 +58,10 @@ public class MainActivity extends ActionBarActivity {
 
 
     @Override
+    /**
+     * Upon start of the activity, the menu
+     * and items in the menu are created
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         
         // Inflate the menu; this adds items to the action bar if it is present.
