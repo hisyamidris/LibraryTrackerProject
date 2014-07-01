@@ -56,9 +56,12 @@ public class WhatActivity extends ActionBarActivity {
 		 * @param input
 		 */
 	   public void getData(String input){
-	    	String result = "";
+		   String s = "";
+			input = input.replaceAll(" ", "%20");
+			String result = "";
 	    	InputStream isr = null;
-	    	TextView resultView = (TextView) findViewById(R.id.textView2);;
+	    	TextView resultView = (TextView) findViewById(R.id.textView2);
+	    	resultView.setText(s);
 			try{
 	            HttpClient httpclient = new DefaultHttpClient();
 	            HttpPost httppost = new HttpPost("http://ragnarokrefreshed.ragnarok.gs/getWho.php?user="+input); //YOUR PHP SCRIPT ADDRESS 
@@ -92,7 +95,7 @@ public class WhatActivity extends ActionBarActivity {
 	     
 	   /** parse the JSON data*/
 	   try {
-		   String s = "";
+		   s = "";
 		   JSONArray jArray = new JSONArray(result);
 		   int j;
 		   for(int i=0; i<jArray.length();i++){
