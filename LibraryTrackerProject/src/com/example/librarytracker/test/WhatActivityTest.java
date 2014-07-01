@@ -1,6 +1,7 @@
 package com.example.librarytracker.test;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.TouchUtils;
 //import android.test.TouchUtils;
 import android.test.ViewAsserts;
 import android.view.View;
@@ -41,7 +42,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertNotNull(mList);
 	}
 	//testing first button
-	public void testButton1() {
+	public void testButton1Layout() {
 		final View decorView = mActivity.getWindow().getDecorView();
 
 	    ViewAsserts.assertOnScreen(decorView, mButton1);
@@ -53,7 +54,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertEquals(resourceString1,(String)mButton1.getText());
 	}
 	
-	public void testButton2() {
+	public void testButton2Layout() {
 		final View decorView = mActivity.getWindow().getDecorView();
 
 	    ViewAsserts.assertOnScreen(decorView, mButton2);
@@ -64,7 +65,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertEquals(resourceString2,(String)mButton2.getText());
 	}
 	
-	public void testEditText() {
+	public void testEditTextLayout() {
 		final View decorView = mActivity.getWindow().getDecorView();
 		
 		ViewAsserts.assertOnScreen(decorView, mEText);
@@ -73,7 +74,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertNotNull(layoutParams);
 	}
 	
-	public void testListView() {
+	public void testListViewLayout() {
 		final View decorView = mActivity.getWindow().getDecorView();
 		
 		ViewAsserts.assertOnScreen(decorView, mList);
@@ -81,4 +82,14 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		            mList.getLayoutParams();
 		assertNotNull(layoutParams);
 	}
+	
+	/*public void testButton2() {
+		getInstrumentation().waitForIdleSync();
+		getInstrumentation().sendStringSync("Andy");
+		getInstrumentation().waitForIdleSync();
+		
+		TouchUtils.clickView(this, mButton2);
+	}
+	*/
+	
 }

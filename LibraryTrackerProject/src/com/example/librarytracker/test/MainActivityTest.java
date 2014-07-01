@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.librarytracker.*;
+import com.example.librarytracker.MainActivity;
 
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
 	
@@ -16,14 +16,13 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     private Button mButton1, mButton2;
     private TextView mText;
     private String resourceString1, resourceString2, resourceString3;
-    
 	public MainActivityTest() {
 		super(MainActivity.class);
 	}
 	
 	protected void setUp() throws Exception {        
 		super.setUp();        
-		mActivity = this.getActivity();        
+		mActivity = this.getActivity();     
 		mButton1 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.button1);        
 		mButton2 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.button2);
 		mText = (TextView) mActivity.findViewById(com.example.librarytracker.R.id.textView1);
@@ -69,5 +68,4 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertNotNull(layoutParams);
 		assertEquals(resourceString3,(String)mText.getText());
 	}
-	
 }

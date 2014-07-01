@@ -42,12 +42,12 @@ public class WhatActivity extends ActionBarActivity {
 	     mainListView = (ListView) findViewById( R.id.list );
 
 	     // Create and populate a List of planet names.
-	     String[] planets = new String[] { "" };  
-	     final ArrayList<String> planetList = new ArrayList<String>();
-	     planetList.addAll( Arrays.asList(planets) );
+	     String[] books = new String[] { "" };  
+	     final ArrayList<String> bookList = new ArrayList<String>();
+	     bookList.addAll( Arrays.asList(books) );
 	     
 	     // Create ArrayAdapter using the planet list.
-	     listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+	     listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, bookList);
 	     
 	     // Add more planets. If you passed a String[] instead of a List<String> 
 	     // into the ArrayAdapter constructor, you must not add more items. 
@@ -66,10 +66,10 @@ public class WhatActivity extends ActionBarActivity {
         	/** After clicking on the button, the SQL query is sent*/
             public void onClick(View arg0) {
         //     	outputSearch.setText(inputSearch.getText());
-            	planetList.clear();         	
+            	bookList.clear();         	
  //    		   for(int i=0; i == planetList.size();i++) listAdapter.remove(listAdapter.getItem(i));
      		  listAdapter.notifyDataSetChanged();
-            	planetList.addAll( Arrays.asList(getData(inputSearch.getText().toString())));         
+            	bookList.addAll( Arrays.asList(getData(inputSearch.getText().toString())));         
             }
         });
         
