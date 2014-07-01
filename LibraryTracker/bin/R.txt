@@ -116,10 +116,14 @@ int bool abc_config_actionMenuItemAllCaps 0x7f060005
 int bool abc_config_allowActionMenuItemTextWithIcon 0x7f060004
 int bool abc_config_showMenuShortcutsWhenKeyboardPresent 0x7f060003
 int bool abc_split_action_bar_is_narrow 0x7f060002
-int color abc_search_url_text_holo 0x7f070003
+int color Steel 0x7f070004
+int color abc_search_url_text_holo 0x7f070007
 int color abc_search_url_text_normal 0x7f070000
 int color abc_search_url_text_pressed 0x7f070002
 int color abc_search_url_text_selected 0x7f070001
+int color black 0x7f070005
+int color lightblue 0x7f070003
+int color white 0x7f070006
 int dimen abc_action_bar_default_height 0x7f080002
 int dimen abc_action_bar_icon_vertical_padding 0x7f080003
 int dimen abc_action_bar_progress_bar_size 0x7f08000a
@@ -227,6 +231,8 @@ int drawable abc_textfield_searchview_holo_light 0x7f020054
 int drawable abc_textfield_searchview_right_holo_dark 0x7f020055
 int drawable abc_textfield_searchview_right_holo_light 0x7f020056
 int drawable ic_launcher 0x7f020057
+int drawable red_button 0x7f020058
+int drawable steelDrawable 0x7f020059
 int id action_bar 0x7f05001c
 int id action_bar_activity_content 0x7f050015
 int id action_bar_container 0x7f05001b
@@ -243,8 +249,8 @@ int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id back 0x7f050046
 int id beginning 0x7f050011
-int id button1 0x7f05003e
-int id button2 0x7f05003f
+int id button1 0x7f05003f
+int id button2 0x7f05003e
 int id button3 0x7f050040
 int id buttonNext 0x7f050042
 int id buttonWho 0x7f050049
@@ -487,6 +493,7 @@ int style Widget_AppCompat_PopupMenu 0x7f0b002b
 int style Widget_AppCompat_ProgressBar 0x7f0b000a
 int style Widget_AppCompat_ProgressBar_Horizontal 0x7f0b0009
 int style Widget_AppCompat_Spinner_DropDown_ActionBar 0x7f0b0022
+int style button_text 0x7f0b0085
 int[] styleable ActionBar { 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d, 0x7f01002e, 0x7f01002f, 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033 }
 int styleable ActionBar_background 10
 int styleable ActionBar_backgroundSplit 12

@@ -794,10 +794,14 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070003;
+        public static final int Steel=0x7f070004;
+        public static final int abc_search_url_text_holo=0x7f070007;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
+        public static final int black=0x7f070005;
+        public static final int lightblue=0x7f070003;
+        public static final int white=0x7f070006;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -982,6 +986,8 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ic_launcher=0x7f020057;
+        public static final int red_button=0x7f020058;
+        public static final int steelDrawable=0x7f020059;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1000,8 +1006,8 @@ containing a value of this type.
         public static final int always=0x7f05000b;
         public static final int back=0x7f050046;
         public static final int beginning=0x7f050011;
-        public static final int button1=0x7f05003e;
-        public static final int button2=0x7f05003f;
+        public static final int button1=0x7f05003f;
+        public static final int button2=0x7f05003e;
         public static final int button3=0x7f050040;
         public static final int buttonNext=0x7f050042;
         public static final int buttonWho=0x7f050049;
@@ -1383,6 +1389,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_ProgressBar=0x7f0b000a;
         public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0b0009;
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b0022;
+        public static final int button_text=0x7f0b0085;
     }
     public static final class styleable {
         /**  ============================================ 

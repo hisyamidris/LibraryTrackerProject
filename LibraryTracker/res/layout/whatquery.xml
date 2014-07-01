@@ -3,17 +3,9 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="com.example.librarytracker.MainActivity"
     tools:ignore="MergeRootFrame" >
-
-    	      <Button
-    	          android:id="@+id/buttonNext"
-    	          android:layout_width="fill_parent"
-    	          android:layout_height="wrap_content"
-    	          android:layout_alignParentLeft="true"
-    	          android:layout_below="@+id/buttonNext"
-    	          android:layout_marginTop="58dp"
-    	          android:text="@string/whoq" />
 
     	      <TextView
     	          android:id="@+id/textView1"
@@ -33,6 +25,7 @@
     	          android:ems="10"
     	          android:inputType="textPersonName"
     	          android:maxLength="50"
+    	          android:background="@color/white"
     	          android:text="@string/blank" />
 
     	      <TextView
@@ -41,22 +34,39 @@
     	          android:layout_height="wrap_content"
     	          android:layout_below="@+id/textView1"
     	          android:layout_centerHorizontal="true"
-    	          android:text="TextView" />
+    	          android:text="@string/blank"
+    	          android:textColor="@color/white" />
     	      
     	               <ListView
     	                   android:id="@+id/list"
     	                   android:layout_width="match_parent"
     	                   android:layout_height="wrap_content"
-    	                   android:layout_alignTop="@+id/textView1" >
+    	                   android:layout_alignTop="@+id/textView2"
+    	                   android:textColor="@color/white" >
 
          </ListView>
 
     	               <Button
     	                   android:id="@+id/back"
+    	                   style="@style/button_text"
     	                   android:layout_width="wrap_content"
     	                   android:layout_height="wrap_content"
     	                   android:layout_below="@+id/buttonNext"
     	                   android:layout_centerHorizontal="true"
+    	                   android:textSize="15sp"
+    	                   android:background="@drawable/red_button"
     	                   android:text="@string/back" />
+
+    	               <Button
+    	                   android:id="@+id/buttonNext"
+    	                   style="@style/button_text"
+    	                   android:layout_width="fill_parent"
+    	                   android:layout_height="wrap_content"
+    	                   android:layout_alignParentRight="true"
+    	                   android:layout_below="@+id/whatText"
+    	                   android:layout_marginTop="20dp"
+    	                   android:text="@string/whoq"
+    	                   android:background="@drawable/red_button"
+    	                   android:textSize="15sp" />
 
 </RelativeLayout>

@@ -4,6 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="com.example.librarytracker.MainActivity"
     tools:ignore="MergeRootFrame" >
 
@@ -15,6 +16,7 @@
         android:layout_centerHorizontal="true"
         android:maxLength="30"
         android:ems="10"
+        android:background="@color/white"
         android:inputType="textShortMessage" />
 
     <TextView
@@ -29,11 +31,14 @@
 
     <Button
         android:id="@+id/buttonWho"
+        style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/inputWho"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
+        android:textSize="15sp"
+        android:background="@drawable/red_button"
         android:text="@string/whereq" />
 
     <TextView
@@ -43,14 +48,18 @@
         android:layout_below="@+id/confirmWho"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
-        android:text="TextView" />
+        android:text="@string/blank"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/back"
+        style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonWho"
         android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:background="@drawable/red_button"
         android:text="@string/back" />
 
 </RelativeLayout>

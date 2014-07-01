@@ -1,14 +1,12 @@
 package com.example.librarytracker.test;
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.TouchUtils;
 import android.test.ViewAsserts;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.librarytracker.MainActivity;
-import com.example.librarytracker.WhatActivity;
 
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
 	

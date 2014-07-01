@@ -9,5 +9,10 @@
     <string android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/string1" name="adminmenu">Login as Admin</string>
     <string name="blank"/>
     <string name="back">Back</string>
+    <color name="lightblue">#FF87CEFA</color>
+    <color name="Steel">#FFB0C4DE</color>
+    <drawable name="steelDrawable">#FFB0C4DE</drawable>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFAFA</color>
 
 </resources>

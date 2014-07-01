@@ -135,7 +135,7 @@ public class WhatActivity extends ActionBarActivity {
 	   try {
 		   s = "";
 		   JSONArray jArray = new JSONArray(result);
-		   int j;
+		   //int j;
 		   for(int i=0; i<jArray.length();i++){
 //			   j = i+1;
 			   JSONObject json = jArray.getJSONObject(i);

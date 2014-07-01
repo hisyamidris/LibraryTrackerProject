@@ -3,42 +3,53 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="com.example.librarytracker.MainActivity"
     tools:ignore="MergeRootFrame" >
-    
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
-            android:text="@string/welcome_text" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="112dp"
-            android:text="@string/whoq" />
+            android:layout_marginTop="44dp"
+            android:gravity="center"
+            android:text="@string/welcome_text"
+            android:textColor="@color/Steel"
+            android:textSize="40sp" />
 
         <Button
             android:id="@+id/button2"
+            style="@style/button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button1"
             android:layout_centerHorizontal="true"
-            android:text="@string/whereq" />
+            android:background="@drawable/red_button"
+            android:text="@string/whereq"
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/button3"
+            style="@style/button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button2"
             android:layout_centerHorizontal="true"
-            android:text="@string/adminmenu" />
-        
+            android:background="@drawable/red_button"
+            android:text="@string/adminmenu"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/red_button"
+            android:text="@string/whoq"
+            android:textSize="30sp" />
 
 </RelativeLayout>
