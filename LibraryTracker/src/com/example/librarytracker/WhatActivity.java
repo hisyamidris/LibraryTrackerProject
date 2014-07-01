@@ -3,6 +3,8 @@ package com.example.librarytracker;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -19,8 +21,10 @@ import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class WhatActivity extends ActionBarActivity {
@@ -32,6 +36,25 @@ public class WhatActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.whatquery);
         StrictMode.enableDefaults();
+	     
+	     // Find the ListView resource. 
+	     mainListView = (ListView) findViewById( R.id.list );
+
+	     // Create and populate a List of planet names.
+	     String[] planets = new String[] { "" };  
+	     final ArrayList<String> planetList = new ArrayList<String>();
+	     planetList.addAll( Arrays.asList(planets) );
+	     
+	     // Create ArrayAdapter using the planet list.
+	     listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
+	     
+	     // Add more planets. If you passed a String[] instead of a List<String> 
+	     // into the ArrayAdapter constructor, you must not add more items. 
+	     // Otherwise an exception will occur.
+	     
+	     // Set the ArrayAdapter as the ListView's adapter.
+	     mainListView.setAdapter( listAdapter );      
+	     
         final EditText inputSearch = (EditText) findViewById(R.id.whatText);
         Button buttonNext = (Button) findViewById(R.id.buttonNext);
   //      final TextView outputSearch = (TextView) findViewById(R.id.textView1);
@@ -41,7 +64,10 @@ public class WhatActivity extends ActionBarActivity {
         	/** After clicking on the button, the SQL query is sent*/
             public void onClick(View arg0) {
         //     	outputSearch.setText(inputSearch.getText());
-                getData(inputSearch.getText().toString());               
+            	planetList.clear();         	
+ //    		   for(int i=0; i == planetList.size();i++) listAdapter.remove(listAdapter.getItem(i));
+     		  listAdapter.notifyDataSetChanged();
+            	planetList.addAll( Arrays.asList(getData(inputSearch.getText().toString())));         
             }
         });
         
@@ -55,7 +81,8 @@ public class WhatActivity extends ActionBarActivity {
 		 * This methods gets the data from the database using SQL queries
 		 * @param input
 		 */
-	   public void getData(String input){
+	   public String[] getData(String input){
+		   String[] list = new String[] { "" };  
 		   String s = "";
 			input = input.replaceAll(" ", "%20");
 			String result = "";
@@ -99,10 +126,12 @@ public class WhatActivity extends ActionBarActivity {
 		   JSONArray jArray = new JSONArray(result);
 		   int j;
 		   for(int i=0; i<jArray.length();i++){
-			   j = i+1;
+//			   j = i+1;
 			   JSONObject json = jArray.getJSONObject(i);
-			   s = s + 
-					   j + ". "+json.getString("title")+"\n";
+//			   s = s + 
+//					   j + ". "+json.getString("title")+"\n";
+//			   list[i] = json.getString("title");
+			   listAdapter.add( json.getString("title") );
 		   }
 		   
 		   resultView.setText(s);
@@ -111,6 +140,10 @@ public class WhatActivity extends ActionBarActivity {
 		// TODO: handle exception
 		   Log.e("log_tag", "Error Parsing Data "+e.toString());
 	   }
-	    
+	    return list;
 	    }
+	   private ListView mainListView ;
+	   private ArrayAdapter<String> listAdapter ;
+
+
 }
