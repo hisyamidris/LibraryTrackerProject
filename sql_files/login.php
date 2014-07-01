@@ -11,7 +11,7 @@
        
        $name = $_REQUEST['user'];
        
-       $result = mysql_query("SELECT * FROM librarybooks WHERE whoq= '$name' ") or die('Errant query:');
+       $result = mysql_query("SELECT * FROM login WHERE userid= '$name' ") or die('Errant query:');
        
        
        while($row = mysql_fetch_assoc($result))
