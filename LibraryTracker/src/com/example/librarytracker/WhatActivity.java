@@ -56,20 +56,20 @@ public class WhatActivity extends ActionBarActivity {
 	     // Set the ArrayAdapter as the ListView's adapter.
 	     mainListView.setAdapter( listAdapter );      
 	     
+	    	   
         final EditText inputSearch = (EditText) findViewById(R.id.whatText);
         Button buttonNext = (Button) findViewById(R.id.buttonNext);
   //      final TextView outputSearch = (TextView) findViewById(R.id.textView1);
         Button previousScreen = (Button) findViewById(R.id.back);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
-          	
         	/** After clicking on the button, the SQL query is sent*/
             public void onClick(View arg0) {
         //     	outputSearch.setText(inputSearch.getText());
             	bookList.clear();         	
  //    		   for(int i=0; i == planetList.size();i++) listAdapter.remove(listAdapter.getItem(i));
      		  listAdapter.notifyDataSetChanged();
-            	bookList.addAll( Arrays.asList(getData(inputSearch.getText().toString())));         
+            	bookList.addAll( Arrays.asList(getData(inputSearch.getText().toString())));   
             }
         });
         

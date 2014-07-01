@@ -8,28 +8,29 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.example.librarytracker.WhatActivity;
+import com.example.librarytracker.WhereActivity;
 
-public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActivity> {
+public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereActivity> {
 	
-	private WhatActivity mActivity;
+	private WhereActivity mActivity;
     private Button mButton1, mButton2;
     private EditText mEText;
     private String resourceString1, resourceString2;
-    private ListView mList;
+    private TextView mText;
     
-	public WhatActivityTest() {
-		super(WhatActivity.class);
+	public WhereActivityTest() {
+		super(WhereActivity.class);
 	}
 	
 	protected void setUp() throws Exception {        
 		super.setUp();        
 		mActivity = this.getActivity();        
 		mButton1 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.back);        
-		mButton2 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.buttonNext);
-		mEText = (EditText) mActivity.findViewById(com.example.librarytracker.R.id.whatText);
-		mList = (ListView) mActivity.findViewById(com.example.librarytracker.R.id.list);
+		mButton2 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.buttonWho);
+		mEText = (EditText) mActivity.findViewById(com.example.librarytracker.R.id.inputWho);
+		mText = (TextView) mActivity.findViewById(com.example.librarytracker.R.id.list);
 		resourceString1 = mActivity.getString(com.example.librarytracker.R.string.back);
 		resourceString2 = mActivity.getString(com.example.librarytracker.R.string.whoq);
 }
@@ -37,7 +38,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertNotNull(mButton1);
 		assertNotNull(mButton2);
 		assertNotNull(mEText);
-		assertNotNull(mList);
+		assertNotNull(mText);
 	}
 	//testing first button
 	public void testButton1Layout() {
@@ -72,80 +73,28 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertNotNull(layoutParams);
 	}
 	
-	public void testListViewLayout() {
+	public void testTextViewLayout() {
 		final View decorView = mActivity.getWindow().getDecorView();
 		
-		ViewAsserts.assertOnScreen(decorView, mList);
+		ViewAsserts.assertOnScreen(decorView, mText);
 		final ViewGroup.LayoutParams layoutParams =
-		            mList.getLayoutParams();
+		            mText.getLayoutParams();
 		assertNotNull(layoutParams);
 	}
 	
 	public void testButton2Alpha() throws Exception{
 		    getActivity().runOnUiThread(new Runnable() {
-		      String NEW_TEXT = "Andy";
+		      String NEW_TEXT = "Code Complete 2";
 		      public void run() {
 		    	  mEText.setText(NEW_TEXT);
 				    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
 				    
 				   	mButton2.performClick();
-				    
-				    String test = (String) mList.getItemAtPosition(0);
-		        	assertEquals(test, "Code Complete 2");
+				   	
+		        	assertEquals(mText.getText(), "Andy");
 		      }
 		    });
 		    
 		    getInstrumentation().waitForIdleSync();
-	}
-	
-	public void testButton2Blank() throws Exception{
-	    getActivity().runOnUiThread(new Runnable() {
-	      String NEW_TEXT = "Andyasdfa";
-	      public void run() {
-	    	  mEText.setText(NEW_TEXT);
-			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
-			    
-			   	mButton2.performClick();
-			    
-			    String test = (String) mList.getItemAtPosition(0);
-	        	assertEquals(test, "");
-	      }
-	    });
-	    
-	    getInstrumentation().waitForIdleSync();
-	}
-	
-	public void testButton2Numeric() throws Exception{
-	    getActivity().runOnUiThread(new Runnable() {
-	      String NEW_TEXT = "12341234";
-	      public void run() {
-	    	  mEText.setText(NEW_TEXT);
-			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
-			    
-			   	mButton2.performClick();
-			    
-			    String test = (String) mList.getItemAtPosition(0);
-	        	assertEquals(test, "");
-	      }
-	    });
-	    
-	    getInstrumentation().waitForIdleSync();
-	}
-	
-	public void testButton2anotherSearch() throws Exception{
-	    getActivity().runOnUiThread(new Runnable() {
-	      String NEW_TEXT = "Judy Stafford";
-	      public void run() {
-	    	  mEText.setText(NEW_TEXT);
-			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
-			    
-			   	mButton2.performClick();
-			    
-			    String test = (String) mList.getItemAtPosition(0);
-	        	assertEquals(test, "The 5 Love Languages: The Secret to Love That Lasts");
-	      }
-	    });
-	    
-	    getInstrumentation().waitForIdleSync();
 	}
 }
