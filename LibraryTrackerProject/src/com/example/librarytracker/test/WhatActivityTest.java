@@ -82,6 +82,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Alpha() throws Exception{
+		   /** Test input = "Andy", expecting output = "Code Complete 2" */
 		    getActivity().runOnUiThread(new Runnable() {
 		      String NEW_TEXT = "Andy";
 		      public void run() {
@@ -99,6 +100,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Blank() throws Exception{
+		   /** Test invalid input, expecting output = "" */
 	    getActivity().runOnUiThread(new Runnable() {
 	      String NEW_TEXT = "Andyasdfa";
 	      public void run() {
@@ -116,6 +118,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Numeric() throws Exception{
+		   /** Test invalid numeric input, expecting output = "" */
 	    getActivity().runOnUiThread(new Runnable() {
 	      String NEW_TEXT = "12341234";
 	      public void run() {
@@ -133,6 +136,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2anotherSearch() throws Exception{
+		   /** Test input = "Judy Stafford", expecting output = "The 5 Love Languages: The Secret to Love That Lasts" */
 	    getActivity().runOnUiThread(new Runnable() {
 	      String NEW_TEXT = "Judy Stafford";
 	      public void run() {

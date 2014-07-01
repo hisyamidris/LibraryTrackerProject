@@ -60,11 +60,12 @@ public class WhereActivity extends ActionBarActivity {
                     .commit();
         }
 	}
-	   public void getData(String input){
+	   public void getData(String input /**< : the string we want to search */){
+		   /**Search matches between the input and the database and produce result in textView */
 			input = input.replaceAll(" ", "%20");
 	    	String result = "";
 	    	InputStream isr = null;
-	    	TextView resultView = (TextView) findViewById(R.id.textView1);
+	    	TextView resultView = (TextView) findViewById(R.id.textView1); 
 	    	resultView.setText("");
 			try{
 	            HttpClient httpclient = new DefaultHttpClient();

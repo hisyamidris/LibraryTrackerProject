@@ -42,6 +42,7 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 	}
 	//testing first button
 	public void testButton1Layout() {
+		   /**Test out the resulting text produced by the inputbox
 		final View decorView = mActivity.getWindow().getDecorView();
 
 	    ViewAsserts.assertOnScreen(decorView, mButton1);
@@ -65,6 +66,7 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 	}
 	
 	public void testEditTextLayout() {
+		   /**Search matches between the input and the database and produce result in textView */
 		final View decorView = mActivity.getWindow().getDecorView();
 		
 		ViewAsserts.assertOnScreen(decorView, mEText);
@@ -83,6 +85,7 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 	}
 	
 	public void testButton2Alpha() throws Exception{
+		   /**Test that checks the output of the result obtained from database */
 		    getActivity().runOnUiThread(new Runnable() {
 		      String NEW_TEXT = "Code Complete 2";
 		      public void run() {

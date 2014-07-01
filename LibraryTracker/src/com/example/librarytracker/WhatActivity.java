@@ -93,6 +93,7 @@ public class WhatActivity extends ActionBarActivity {
 		 * @param input
 		 */
 	   public String[] getData(String input){
+		   /**Search matches between the input and the database and produce result in textView */
 		   String[] list = new String[] { "" };  
 //		   String s = "";
 			input = input.replaceAll(" ", "%20");
@@ -107,14 +108,14 @@ public class WhatActivity extends ActionBarActivity {
 	            HttpEntity entity = response.getEntity();
 	            isr = entity.getContent();
 	    }
-			/** In the event of an error connecting to the database
-			 *  the error message is displayed below
-			 */
+			// In the event of an error connecting to the database
+			//  the error message is displayed below
+
 	    catch(Exception e){
 	            Log.e("log_tag", "Error in http connection "+e.toString());
 //	            resultView.setText("Couldn't connect to database");
 	    }
-	    /**convert response to string */
+	    //convert response to string
 	    try{
 	            BufferedReader reader = new BufferedReader(new InputStreamReader(isr,"iso-8859-1"),8);
 	            StringBuilder sb = new StringBuilder();
@@ -126,12 +127,12 @@ public class WhatActivity extends ActionBarActivity {
 	     
 	            result=sb.toString();
 	    }
-	    /**Error message in event that conversion fails*/
+	    //Error message in event that conversion fails
 	    catch(Exception e){
 	            Log.e("log_tag", "Error  converting result "+e.toString());
 	    }
 	     
-	   /** parse the JSON data*/
+	   // parse the JSON data
 	   try {
 //		   s = "";
 		   JSONArray jArray = new JSONArray(result);
