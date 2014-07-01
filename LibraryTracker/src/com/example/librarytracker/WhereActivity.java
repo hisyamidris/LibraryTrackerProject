@@ -25,9 +25,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class WhereActivity extends ActionBarActivity {
+	
+	private int currentViewId = -3;
+	
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.wherequery);
+        setCurrentViewById(R.layout.wherequery);
         StrictMode.enableDefaults();
         final EditText inputSearch = (EditText) findViewById(R.id.inputWho);
         Button buttonNext = (Button) findViewById(R.id.buttonWho);
@@ -58,9 +61,11 @@ public class WhereActivity extends ActionBarActivity {
         }
 	}
 	   public void getData(String input){
+			input = input.replaceAll(" ", "%20");
 	    	String result = "";
 	    	InputStream isr = null;
-	    	TextView resultView = (TextView) findViewById(R.id.textView1);;
+	    	TextView resultView = (TextView) findViewById(R.id.textView1);
+	    	resultView.setText("");
 			try{
 	            HttpClient httpclient = new DefaultHttpClient();
 	            HttpPost httppost = new HttpPost("http://ragnarokrefreshed.ragnarok.gs/getWhere.php?user="+input); //YOUR PHP SCRIPT ADDRESS 
@@ -108,6 +113,15 @@ public class WhereActivity extends ActionBarActivity {
 		   Log.e("log_tag", "Error Parsing Data "+e.toString());
 	   }
 	    
+	   }
+	   
+	   public void setCurrentViewById(int id) {
+	        setContentView(id);
+	        currentViewId = id;
+	    }
+
+	   public int getCurrentViewById() {
+	        return currentViewId;
 	    }
 }
 

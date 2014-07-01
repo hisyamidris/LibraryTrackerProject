@@ -15,10 +15,12 @@ import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
+	private int currentViewId = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        
+        setCurrentViewById(R.layout.activity_main);
         
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -90,6 +92,15 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+    }
+    public void setCurrentViewById(int id) {
+        setContentView(id);
+        currentViewId = id;
+    }
+
+    public int getCurrentViewById()
+    {
+        return currentViewId;
     }
 
 }

@@ -6,35 +6,39 @@ import android.test.ViewAsserts;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ListView;
 
-import com.example.librarytracker.*;
+import com.example.librarytracker.WhatActivity;
 
-public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
+public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActivity> {
 	
-	private MainActivity mActivity;
+	private WhatActivity mActivity;
     private Button mButton1, mButton2;
-    private TextView mText;
+    private EditText mEText;
     private String resourceString1, resourceString2, resourceString3;
+    private ListView mList;
     
-	public MainActivityTest() {
-		super(MainActivity.class);
+	public WhatActivityTest() {
+		super(WhatActivity.class);
 	}
 	
 	protected void setUp() throws Exception {        
 		super.setUp();        
 		mActivity = this.getActivity();        
-		mButton1 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.button1);        
-		mButton2 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.button2);
-		mText = (TextView) mActivity.findViewById(com.example.librarytracker.R.id.textView1);
-		resourceString1 = mActivity.getString(com.example.librarytracker.R.string.whoq);
-		resourceString2 = mActivity.getString(com.example.librarytracker.R.string.whereq);
-		resourceString3 = mActivity.getString(com.example.librarytracker.R.string.welcome_text);
+		mButton1 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.back);        
+		mButton2 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.buttonNext);
+		mEText = (EditText) mActivity.findViewById(com.example.librarytracker.R.id.whatText);
+		mList = (ListView) mActivity.findViewById(com.example.librarytracker.R.id.list);
+		resourceString1 = mActivity.getString(com.example.librarytracker.R.string.back);
+		resourceString2 = mActivity.getString(com.example.librarytracker.R.string.whoq);
+//		resourceString3 = mActivity.getString(com.example.librarytracker.R.string.blank);
 }
 	public void testPreconditions() {
 		assertNotNull(mButton1);
 		assertNotNull(mButton2);
-		assertNotNull(mText);
+		assertNotNull(mEText);
+		assertNotNull(mList);
 	}
 	//testing first button
 	public void testButton1() {
@@ -60,14 +64,21 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertEquals(resourceString2,(String)mButton2.getText());
 	}
 	
-	public void testTextView() {
+	public void testEditText() {
 		final View decorView = mActivity.getWindow().getDecorView();
 		
-		ViewAsserts.assertOnScreen(decorView, mText);
+		ViewAsserts.assertOnScreen(decorView, mEText);
 		final ViewGroup.LayoutParams layoutParams =
-		            mText.getLayoutParams();
+		            mEText.getLayoutParams();
 		assertNotNull(layoutParams);
-		assertEquals(resourceString3,(String)mText.getText());
 	}
 	
+	public void testListView() {
+		final View decorView = mActivity.getWindow().getDecorView();
+		
+		ViewAsserts.assertOnScreen(decorView, mList);
+		final ViewGroup.LayoutParams layoutParams =
+		            mList.getLayoutParams();
+		assertNotNull(layoutParams);
+	}
 }

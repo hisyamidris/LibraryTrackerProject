@@ -14,8 +14,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.example.librarytracker.MainActivity.PlaceholderFragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -26,16 +24,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.example.librarytracker.MainActivity.PlaceholderFragment;
 
 public class WhatActivity extends ActionBarActivity {
     
+	private int currentViewId = -2;
 	/**
      * Upon start of the class, onCreate function sets the view and state of the program
      */
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.whatquery);
+        setCurrentViewById(R.layout.whatquery);
         StrictMode.enableDefaults();
 	     
 	     // Find the ListView resource. 
@@ -94,12 +94,12 @@ public class WhatActivity extends ActionBarActivity {
 		 */
 	   public String[] getData(String input){
 		   String[] list = new String[] { "" };  
-		   String s = "";
+//		   String s = "";
 			input = input.replaceAll(" ", "%20");
 			String result = "";
 	    	InputStream isr = null;
-	    	TextView resultView = (TextView) findViewById(R.id.textView2);
-	    	resultView.setText(s);
+//	    	TextView resultView = (TextView) findViewById(R.id.textView2);
+//	    	resultView.setText(s);
 			try{
 	            HttpClient httpclient = new DefaultHttpClient();
 	            HttpPost httppost = new HttpPost("http://ragnarokrefreshed.ragnarok.gs/getWho.php?user="+input); //YOUR PHP SCRIPT ADDRESS 
@@ -112,7 +112,7 @@ public class WhatActivity extends ActionBarActivity {
 			 */
 	    catch(Exception e){
 	            Log.e("log_tag", "Error in http connection "+e.toString());
-	            resultView.setText("Couldn't connect to database");
+//	            resultView.setText("Couldn't connect to database");
 	    }
 	    /**convert response to string */
 	    try{
@@ -133,7 +133,7 @@ public class WhatActivity extends ActionBarActivity {
 	     
 	   /** parse the JSON data*/
 	   try {
-		   s = "";
+//		   s = "";
 		   JSONArray jArray = new JSONArray(result);
 		   //int j;
 		   for(int i=0; i<jArray.length();i++){
@@ -145,7 +145,7 @@ public class WhatActivity extends ActionBarActivity {
 			   listAdapter.add( json.getString("title") );
 		   }
 		   
-		   resultView.setText(s);
+//		   resultView.setText(s);
 		
 	   } catch (Exception e) {
 		// TODO: handle exception
@@ -155,6 +155,14 @@ public class WhatActivity extends ActionBarActivity {
 	    }
 	   private ListView mainListView ;
 	   private ArrayAdapter<String> listAdapter ;
+	   
+	   public void setCurrentViewById(int id) {
+	        setContentView(id);
+	        currentViewId = id;
+	    }
 
+	   public int getCurrentViewById() {
+	        return currentViewId;
+	    }
 
 }
