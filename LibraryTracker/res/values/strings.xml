@@ -8,5 +8,6 @@
     <string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="whoq">What Am I Currently Borrowing?</string>
     <string android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/string1" name="adminmenu">Login as Admin</string>
     <string name="blank"/>
+    <string name="back">Back</string>
 
 </resources>

@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import com.example.librarytracker.MainActivity.PlaceholderFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
@@ -58,6 +59,7 @@ public class WhatActivity extends ActionBarActivity {
         final EditText inputSearch = (EditText) findViewById(R.id.whatText);
         Button buttonNext = (Button) findViewById(R.id.buttonNext);
   //      final TextView outputSearch = (TextView) findViewById(R.id.textView1);
+        Button previousScreen = (Button) findViewById(R.id.back);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
           	
@@ -68,6 +70,15 @@ public class WhatActivity extends ActionBarActivity {
  //    		   for(int i=0; i == planetList.size();i++) listAdapter.remove(listAdapter.getItem(i));
      		  listAdapter.notifyDataSetChanged();
             	planetList.addAll( Arrays.asList(getData(inputSearch.getText().toString())));         
+            }
+        });
+        
+        previousScreen.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                Intent nextScreen = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(nextScreen);
+ 
             }
         });
         

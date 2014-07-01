@@ -47,7 +47,16 @@
     	                   android:id="@+id/list"
     	                   android:layout_width="match_parent"
     	                   android:layout_height="wrap_content"
-    	                   android:layout_below="@+id/buttonNext" >
+    	                   android:layout_alignTop="@+id/textView1" >
+
          </ListView>
+
+    	               <Button
+    	                   android:id="@+id/back"
+    	                   android:layout_width="wrap_content"
+    	                   android:layout_height="wrap_content"
+    	                   android:layout_below="@+id/buttonNext"
+    	                   android:layout_centerHorizontal="true"
+    	                   android:text="@string/back" />
 
 </RelativeLayout>

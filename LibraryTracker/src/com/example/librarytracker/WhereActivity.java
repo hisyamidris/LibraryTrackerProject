@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import com.example.librarytracker.MainActivity.PlaceholderFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
@@ -31,14 +32,22 @@ public class WhereActivity extends ActionBarActivity {
         final EditText inputSearch = (EditText) findViewById(R.id.inputWho);
         Button buttonNext = (Button) findViewById(R.id.buttonWho);
         //final TextView outputSearch = (TextView) findViewById(R.id.confirmWho);
-
+        Button previousScreen = (Button) findViewById(R.id.back);
         
         buttonNext.setOnClickListener(new View.OnClickListener() {
-          	 
             public void onClick(View arg0) {
 
  //     	outputSearch.setText(inputSearch.getText());
                 getData(inputSearch.getText().toString());    
+            }
+        });
+        
+        previousScreen.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                Intent nextScreen = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(nextScreen);
+ 
             }
         });
         

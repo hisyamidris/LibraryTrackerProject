@@ -40,9 +40,17 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/confirmWho"
-        android:layout_alignBottom="@+id/confirmWho"
+        android:layout_below="@+id/confirmWho"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonWho"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back" />
 
 </RelativeLayout>
