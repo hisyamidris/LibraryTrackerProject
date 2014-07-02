@@ -15,7 +15,7 @@ import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
-	private int currentViewId = -1;
+	private int currentViewId = 2130903063;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

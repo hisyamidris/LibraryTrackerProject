@@ -39,6 +39,11 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertNotNull(mEText);
 		assertNotNull(mList);
 	}
+	
+	public void testView() {
+		assertEquals(this.getActivity().getCurrentViewById(), 2130903067);
+	}
+	
 	//testing first button
 	public void testButton1Layout() {
 		final View decorView = mActivity.getWindow().getDecorView();
@@ -93,6 +98,24 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 				    
 				    String test = (String) mList.getItemAtPosition(0);
 		        	assertEquals(test, "Code Complete 2");
+		      }
+		    });
+		    
+		    getInstrumentation().waitForIdleSync();
+	}
+	
+	public void testButton2Alpha2() throws Exception{
+		   /** Test input = "Andy", expecting output = "Code Complete 2". */
+		    getActivity().runOnUiThread(new Runnable() {
+		      String NEW_TEXT = "Andy";
+		      public void run() {
+		    	  mEText.setText(NEW_TEXT);
+				    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
+				    
+				   	mButton2.performClick();
+				    
+				    String test = (String) mList.getItemAtPosition(0);
+		        	assertNotSame(test, "asdfjkasjdflkjasd");
 		      }
 		    });
 		    

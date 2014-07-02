@@ -35,6 +35,10 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertNotNull(mButton2);
 		assertNotNull(mText);
 	}
+	
+	public void testView() {
+		assertEquals(this.getActivity().getCurrentViewById(), 2130903063);
+	}
 	//testing first button
 	public void testButton1() {
 		final View decorView = mActivity.getWindow().getDecorView();
