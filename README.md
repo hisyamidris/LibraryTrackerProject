@@ -1,6 +1,8 @@
 LibraryTrackerProject
 =====================
 
+by Akmal Idris and Ji Hoon Kim
+
 1. Import appcompat_v7,LibraryTracker and LibraryTrackerProject on Eclipse.
 
 2. sql_files is folder containing php files to connect to the database.
