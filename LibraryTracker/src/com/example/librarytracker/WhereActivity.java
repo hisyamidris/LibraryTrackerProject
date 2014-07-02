@@ -132,11 +132,17 @@ public class WhereActivity extends ActionBarActivity {
 	    
 	   }
 	   
+		/**
+	     * Sets the view and state of the program
+	     */
 	   public void setCurrentViewById(int id) {
 	        setContentView(id);
 	        currentViewId = id;
 	    }
 
+		/**
+	     * Gets the view and state of the program
+	     */
 	   public int getCurrentViewById() {
 	        return currentViewId;
 	    }
