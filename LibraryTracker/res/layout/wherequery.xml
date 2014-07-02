@@ -19,15 +19,6 @@
         android:background="@color/white"
         android:inputType="textShortMessage" />
 
-    <TextView
-        android:id="@+id/confirmWho"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/inputWho"
-        android:layout_below="@+id/buttonWho"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/blank" />
 
     <Button
         android:id="@+id/buttonWho"
@@ -45,7 +36,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/confirmWho"
+        android:layout_below="@+id/back"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp"
         android:text="@string/blank"

@@ -1,7 +1,6 @@
 package com.example.librarytracker.test;
 
 import android.test.ActivityInstrumentationTestCase2;
-//import android.test.TouchUtils;
 import android.test.ViewAsserts;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,6 +80,10 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		assertNotNull(layoutParams);
 	}
 	
+	public void testView() {
+		assertEquals(mActivity.getCurrentViewById(), 2130903067);
+	}
+	
 	public void testButton2Alpha() throws Exception{
 		    getActivity().runOnUiThread(new Runnable() {
 		      String NEW_TEXT = "Andy";
@@ -97,6 +100,23 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 		    
 		    getInstrumentation().waitForIdleSync();
 	}
+	
+	public void testButton2Alpha2() throws Exception{
+	    getActivity().runOnUiThread(new Runnable() {
+	      String NEW_TEXT = "Andy";
+	      public void run() {
+	    	  mEText.setText(NEW_TEXT);
+			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
+			    
+			   	mButton2.performClick();
+			    
+			    String test = (String) mList.getItemAtPosition(0);
+	        	assertNotSame(test, "The Art of War");
+	      }
+	    });
+	    
+	    getInstrumentation().waitForIdleSync();
+}
 	
 	public void testButton2Blank() throws Exception{
 	    getActivity().runOnUiThread(new Runnable() {

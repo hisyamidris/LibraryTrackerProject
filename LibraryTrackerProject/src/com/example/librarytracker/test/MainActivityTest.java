@@ -68,4 +68,8 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 		assertNotNull(layoutParams);
 		assertEquals(resourceString3,(String)mText.getText());
 	}
+	
+	public void testView() {
+		assertEquals(mActivity.getCurrentViewById(), 2130903063);
+	}
 }

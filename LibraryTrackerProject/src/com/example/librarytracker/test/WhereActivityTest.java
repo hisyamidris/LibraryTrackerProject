@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.librarytracker.WhereActivity;
@@ -30,9 +29,9 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 		mButton1 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.back);        
 		mButton2 = (Button) mActivity.findViewById(com.example.librarytracker.R.id.buttonWho);
 		mEText = (EditText) mActivity.findViewById(com.example.librarytracker.R.id.inputWho);
-		mText = (TextView) mActivity.findViewById(com.example.librarytracker.R.id.list);
+		mText = (TextView) mActivity.findViewById(com.example.librarytracker.R.id.textView1);
 		resourceString1 = mActivity.getString(com.example.librarytracker.R.string.back);
-		resourceString2 = mActivity.getString(com.example.librarytracker.R.string.whoq);
+		resourceString2 = mActivity.getString(com.example.librarytracker.R.string.whereq);
 }
 	public void testPreconditions() {
 		assertNotNull(mButton1);
@@ -82,6 +81,10 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 		assertNotNull(layoutParams);
 	}
 	
+	public void testView() {
+		assertEquals(mActivity.getCurrentViewById(), 2130903068);
+	}
+	
 	public void testButton2Alpha() throws Exception{
 		    getActivity().runOnUiThread(new Runnable() {
 		      String NEW_TEXT = "Code Complete 2";
@@ -91,10 +94,73 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 				    
 				   	mButton2.performClick();
 				   	
-		        	assertEquals(mText.getText(), "Andy");
+		        	assertEquals(mText.getText(), "Title : Code Complete 2\nBook Status : Andy\nLocation : Unavailable\n\n");
 		      }
 		    });
 		    
 		    getInstrumentation().waitForIdleSync();
+	}
+	
+	public void testButton2Alpha2() throws Exception{
+	    getActivity().runOnUiThread(new Runnable() {
+	      String NEW_TEXT = "Code Complete 2";
+	      public void run() {
+	    	  mEText.setText(NEW_TEXT);
+			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
+			    
+			   	mButton2.performClick();
+			   	
+	        	assertNotSame(mText.getText(), "ashdfodsjfklshd");
+	      }
+	    });
+	    
+	    getInstrumentation().waitForIdleSync();
+	}
+	public void testButton2Numeric() throws Exception{
+	    getActivity().runOnUiThread(new Runnable() {
+	      String NEW_TEXT = "123481928";
+	      public void run() {
+	    	  mEText.setText(NEW_TEXT);
+			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
+			    
+			   	mButton2.performClick();
+			   	
+	        	assertEquals(mText.getText(), "");
+	      }
+	    });
+	    
+	    getInstrumentation().waitForIdleSync();
+	}
+	
+	public void testButton2Blank() throws Exception{
+	    getActivity().runOnUiThread(new Runnable() {
+	      String NEW_TEXT = "";
+	      public void run() {
+	    	  mEText.setText(NEW_TEXT);
+			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
+			    
+			   	mButton2.performClick();
+			   	
+	        	assertEquals(mText.getText(), "");
+	      }
+	    });
+	    
+	    getInstrumentation().waitForIdleSync();
+	}
+	
+	public void testButton2AnotherTest() throws Exception{
+	    getActivity().runOnUiThread(new Runnable() {
+	      String NEW_TEXT = "The Art of War";
+	      public void run() {
+	    	  mEText.setText(NEW_TEXT);
+			    assertEquals("Text incorrect", NEW_TEXT, mEText.getText().toString());
+			    
+			   	mButton2.performClick();
+			   	
+	        	assertEquals(mText.getText(), "Title : The Art of War\nBook Status : Available\nLocation : Library Section N2\n\n");
+	      }
+	    });
+	    
+	    getInstrumentation().waitForIdleSync();
 	}
 }

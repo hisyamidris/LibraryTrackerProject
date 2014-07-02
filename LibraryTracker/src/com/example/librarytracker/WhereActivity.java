@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 public class WhereActivity extends ActionBarActivity {
 	
-	private int currentViewId = -3;
+	private int currentViewId = 2130903068;
 	
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

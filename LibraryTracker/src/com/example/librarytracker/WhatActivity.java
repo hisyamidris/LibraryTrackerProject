@@ -29,7 +29,7 @@ import com.example.librarytracker.MainActivity.PlaceholderFragment;
 
 public class WhatActivity extends ActionBarActivity {
     
-	private int currentViewId = -2;
+	private int currentViewId = 2130903067;
 	/**
      * Upon start of the class, onCreate function sets the view and state of the program
      */
