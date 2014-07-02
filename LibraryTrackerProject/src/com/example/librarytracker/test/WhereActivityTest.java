@@ -42,7 +42,6 @@ public class WhereActivityTest extends ActivityInstrumentationTestCase2<WhereAct
 	}
 	//testing first button
 	public void testButton1Layout() {
-		   /**Test out the resulting text produced by the inputbox
 		final View decorView = mActivity.getWindow().getDecorView();
 
 	    ViewAsserts.assertOnScreen(decorView, mButton1);

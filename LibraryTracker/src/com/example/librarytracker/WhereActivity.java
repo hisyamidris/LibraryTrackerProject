@@ -60,8 +60,24 @@ public class WhereActivity extends ActionBarActivity {
                     .commit();
         }
 	}
-	   public void getData(String input /**< : the string we want to search */){
-		   /**Search matches between the input and the database and produce result in textView */
+	
+	
+
+/**
+ * @brief      Searches the librarybooks database for title that matches with the input string.
+ *
+ * @param      input     Collected string from input box.
+ *
+ * @todo       Find a possibly better way of displaying result other than textView.
+ *
+ * @exception  StringIndexOutOfRangeException
+ *             if input string is not between
+ *             <code>empty</code>.
+ *
+ * @see        NewClass
+ * @see        http://java.sun.com
+ */
+	   public void getData(String input){
 			input = input.replaceAll(" ", "%20");
 	    	String result = "";
 	    	InputStream isr = null;

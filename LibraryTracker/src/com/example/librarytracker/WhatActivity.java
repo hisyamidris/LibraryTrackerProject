@@ -88,12 +88,15 @@ public class WhatActivity extends ActionBarActivity {
                     .commit();
         }
 	}
-		/**
-		 * This methods gets the data from the database using SQL queries
-		 * @param input
-		 */
+	/**
+	 * @brief      Searches the librarybooks database for names that matches with the input string.
+	 *
+	 * @param      input     Collected string from input box.
+	 *
+	 * @return     An array of string consisting all matching results.
+	 *
+	 */
 	   public String[] getData(String input){
-		   /**Search matches between the input and the database and produce result in textView */
 		   String[] list = new String[] { "" };  
 //		   String s = "";
 			input = input.replaceAll(" ", "%20");
