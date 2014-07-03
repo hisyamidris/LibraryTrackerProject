@@ -1,4 +1,4 @@
-LibraryTrackerProject
+Library Tracker App Project
 =====================
 
 by Akmal Idris and Ji Hoon Kim
