@@ -2,7 +2,7 @@
     
     if(isset($_REQUEST['user']))
        {
-       $con = mysql_connect("198.56.164.147","trincli0200","InJPaCllnyUVxarOJaKlb4zd");
+       $con = mysql_connect("198.56.164.147","username","password");
        if (!$con)
        {
        die('Could not connect: ' . mysql_error());

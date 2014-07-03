@@ -46,6 +46,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	
 	//testing first button
 	public void testButton1Layout() {
+		   /**  <b>[Button Test] <\b> */
 		final View decorView = mActivity.getWindow().getDecorView();
 
 	    ViewAsserts.assertOnScreen(decorView, mButton1);
@@ -58,6 +59,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Layout() {
+		   /**  <b>[Button Test] <\b> */
 		final View decorView = mActivity.getWindow().getDecorView();
 
 	    ViewAsserts.assertOnScreen(decorView, mButton2);
@@ -69,6 +71,7 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testEditTextLayout() {
+		   /**  <b>[Layout Test] <\b> */
 		final View decorView = mActivity.getWindow().getDecorView();
 		
 		ViewAsserts.assertOnScreen(decorView, mEText);
@@ -87,7 +90,8 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Alpha() throws Exception{
-		   /** Test input = "Andy", expecting output = "Code Complete 2". */
+		   /**  <b>[Single Word Input Test] <\b>
+		    * Test input = "Andy", expecting output = "Code Complete 2". */
 		    getActivity().runOnUiThread(new Runnable() {
 		      String NEW_TEXT = "Andy";
 		      public void run() {
@@ -105,7 +109,8 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Alpha2() throws Exception{
-		   /** Test input = "Andy", expecting output = "Code Complete 2". */
+		   /**  <b>[Single Word Input Test 2] <\b>
+		    * Test input = "Andy", expecting output = "Code Complete 2". */
 		    getActivity().runOnUiThread(new Runnable() {
 		      String NEW_TEXT = "Andy";
 		      public void run() {
@@ -123,7 +128,8 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Blank() throws Exception{
-		   /** Test invalid input, expecting output = "". */
+		   /**  <b>[Garbage Alphabet Word Input Test] <\b>
+		    * Test invalid input, expecting output = "". */
 	    getActivity().runOnUiThread(new Runnable() {
 	      String NEW_TEXT = "Andyasdfa";
 	      public void run() {
@@ -141,7 +147,8 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2Numeric() throws Exception{
-		   /** Test invalid numeric input, expecting output = "". */
+		   /**  <b>[Garbage Numeric Word Input Test] <\b>
+		    *  Test invalid numeric input, expecting output = "". */
 	    getActivity().runOnUiThread(new Runnable() {
 	      String NEW_TEXT = "12341234";
 	      public void run() {
@@ -159,7 +166,8 @@ public class WhatActivityTest extends ActivityInstrumentationTestCase2<WhatActiv
 	}
 	
 	public void testButton2anotherSearch() throws Exception{
-		   /** Test input = "Judy Stafford", expecting output = "The 5 Love Languages: The Secret to Love That Lasts". */
+		   /**   <b>[Two Words Input Test] <\b>
+		    * Test input = "Judy Stafford", expecting output = "The 5 Love Languages: The Secret to Love That Lasts". */
 	    getActivity().runOnUiThread(new Runnable() {
 	      String NEW_TEXT = "Judy Stafford";
 	      public void run() {
